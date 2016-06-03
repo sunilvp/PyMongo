@@ -15,9 +15,10 @@ def find():
     print("find, reporting for duty")
 
     query = {'value': {'$gt' : 5}}
+    projection = {'insert' : 1, 'name':1, '_id': 0}
 
     try:
-        cursor = sChapterCollection.find(query)
+        cursor = sChapterCollection.find(query, projection)
 
     except Exception as e:
         print ("Unexpected error:", type(e), e)
@@ -50,5 +51,5 @@ def find_one():
 
 
 
-find_one()
+find()
 
