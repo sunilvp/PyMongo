@@ -15,4 +15,7 @@ for (i =1;i<=10;i++){
 	db.secondChapterCollection.insert(forInsertDoc);
 }
 
-print( db.secondChapterCollection.find({'value' : {$gt :5}}))
+print db.secondChapterCollection.find({'value' : {$gt :5}})
+
+
+//db.secondChapterCollection.find({$and : [{'value' : {$exists :true}}, {'value' : { $gt:5}}]})
