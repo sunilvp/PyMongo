@@ -12,7 +12,7 @@ sChapterCollection = db.secondChapterCollection
 
 def find():
 
-    print("find, reporting for duty")
+    print("find, reporting for duty command test")
 
     query = {'value': {'$gt' : 5}}
     projection = {'insert' : 1, 'name':1, '_id': 0}
@@ -26,6 +26,7 @@ def find():
     count =0
     for doc in cursor:
         print(doc)
+        print(doc['insert'],"sunil")
         sanity += 1
         count +=1
         if (sanity > 10):
